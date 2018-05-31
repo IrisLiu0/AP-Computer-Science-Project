@@ -44,8 +44,6 @@ public class Board extends JFrame implements ActionListener {
 		this.setVisible(true);
 
 	}
-	
-	//edit
 
 //	public void paint(Graphics g) {
 //
