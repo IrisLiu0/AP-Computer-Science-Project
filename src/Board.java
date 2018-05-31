@@ -1,7 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Graphics2D;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Icon;
@@ -21,7 +18,7 @@ public class Board extends JFrame implements ActionListener {
 	JButton exitYes = new JButton("Yes"), exitNo = new JButton("No");
 
 	public Board() {
-<<<<<<< HEAD
+
 		add(new GraphicsEngine());
 		this.setResizable(false);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -49,10 +46,8 @@ public class Board extends JFrame implements ActionListener {
 <<<<<<< HEAD
 		 */
 		this.setVisible(true);
-=======
 
 		setVisible(true);
->>>>>>> 52aa393c9d01b260a54456647dad9e665c898f20
 
 	}
 
