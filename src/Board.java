@@ -24,23 +24,24 @@ public class Board extends JFrame implements ActionListener {
 	JButton exitYes = new JButton("Yes"), exitNo = new JButton("No");
 
 	public Board() {
+		add(new GraphicsEngine());
 		this.setResizable(false);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		this.setUndecorated(true);
-		this.setLayout(new BorderLayout());
+		/*this.setLayout(new BorderLayout());
 
 //		this.getContentPane();
 
 		settingButton.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		Icon settingIcon = new ImageIcon(
-				"D:/Iris/Documents/GitHub/AP-Computer-Science-Project/src/Pictures/setting.png");
+				"src/Pictures/setting.png");
 		setting = new JButton(settingIcon);
 		settingButton.add(setting);
 		this.add(settingButton, BorderLayout.SOUTH);
 
 		setting.addActionListener(this);
-
+		 */
 		this.setVisible(true);
 
 	}
