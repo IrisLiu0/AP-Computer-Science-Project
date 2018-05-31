@@ -1,7 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Graphics2D;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Icon;
@@ -12,9 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import com.sun.javafx.geom.Line2D;
-import com.sun.prism.Graphics;
-
 public class Board extends JFrame implements ActionListener {
 
 	JPanel settingButton = new JPanel();
@@ -24,31 +18,24 @@ public class Board extends JFrame implements ActionListener {
 	JButton exitYes = new JButton("Yes"), exitNo = new JButton("No");
 
 	public Board() {
-		this.setResizable(false);
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		this.setUndecorated(true);
-		this.setLayout(new BorderLayout());
-
-//		this.getContentPane();
+		setResizable(false);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		setUndecorated(true);
+		setLayout(new BorderLayout());
 
 		settingButton.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		Icon settingIcon = new ImageIcon(
 				"D:/Iris/Documents/GitHub/AP-Computer-Science-Project/src/Pictures/setting.png");
 		setting = new JButton(settingIcon);
 		settingButton.add(setting);
-		this.add(settingButton, BorderLayout.SOUTH);
+		add(settingButton, BorderLayout.SOUTH);
 
 		setting.addActionListener(this);
 
-		this.setVisible(true);
+		setVisible(true);
 
 	}
-
-//	public void paint(Graphics g) {
-//
-//		g.drawLine(this.getHeight() / 2, 0, this.getHeight() / 2, this.getWidth());
-//	}
 
 	public static void main(String[] args) {
 		Board bb = new Board();
