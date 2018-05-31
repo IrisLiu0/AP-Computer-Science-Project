@@ -12,9 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import com.sun.javafx.geom.Line2D;
-import com.sun.prism.Graphics;
-
 public class Board extends JFrame implements ActionListener {
 
 	JPanel settingButton = new JPanel();
@@ -24,6 +21,7 @@ public class Board extends JFrame implements ActionListener {
 	JButton exitYes = new JButton("Yes"), exitNo = new JButton("No");
 
 	public Board() {
+<<<<<<< HEAD
 		add(new GraphicsEngine());
 		this.setResizable(false);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -32,24 +30,31 @@ public class Board extends JFrame implements ActionListener {
 		/*this.setLayout(new BorderLayout());
 
 //		this.getContentPane();
+=======
+		setResizable(false);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		setUndecorated(true);
+		setLayout(new BorderLayout());
+>>>>>>> 52aa393c9d01b260a54456647dad9e665c898f20
 
 		settingButton.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		Icon settingIcon = new ImageIcon(
 				"src/Pictures/setting.png");
 		setting = new JButton(settingIcon);
 		settingButton.add(setting);
-		this.add(settingButton, BorderLayout.SOUTH);
+		add(settingButton, BorderLayout.SOUTH);
 
 		setting.addActionListener(this);
+<<<<<<< HEAD
 		 */
 		this.setVisible(true);
+=======
+
+		setVisible(true);
+>>>>>>> 52aa393c9d01b260a54456647dad9e665c898f20
 
 	}
-
-//	public void paint(Graphics g) {
-//
-//		g.drawLine(this.getHeight() / 2, 0, this.getHeight() / 2, this.getWidth());
-//	}
 
 	public static void main(String[] args) {
 		Board bb = new Board();
