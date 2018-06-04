@@ -27,13 +27,11 @@ public class Board extends JFrame implements ActionListener {
 		/*this.setLayout(new BorderLayout());
 
 //		this.getContentPane();
-=======
 		setResizable(false);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setUndecorated(true);
 		setLayout(new BorderLayout());
->>>>>>> 52aa393c9d01b260a54456647dad9e665c898f20
 
 		settingButton.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		Icon settingIcon = new ImageIcon(
@@ -43,7 +41,6 @@ public class Board extends JFrame implements ActionListener {
 		add(settingButton, BorderLayout.SOUTH);
 
 		setting.addActionListener(this);
-<<<<<<< HEAD
 		 */
 		this.setVisible(true);
 
