@@ -8,7 +8,7 @@ public class Creatures extends Card
 		super(type);
 		
 	}
-	//sdaf
+
 		
 	
 
