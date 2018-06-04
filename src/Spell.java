@@ -2,9 +2,9 @@
 public class Spell extends Card
 {
 
-	public Spell (String Name) {
+	public Spell (String name, int cost, int id) {
 		
-		super(Name);
+		super(name, cost, id);
 		
 	}
 	
