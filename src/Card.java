@@ -6,6 +6,7 @@ public class Card {
 	private int myCost, myID;
 	private String myName;
 	public static int WEAKEN = 0, EGO_BLOB = 1, SUPPORT_BLOB = 2, CRUEL_BLOB = 3, DRAIN_LIFE = 4, DEADLY_SHOT = 5, HEALTHY_BLOB = 6, SNEAKY_BLOB = 7, BREAD = 8, UNIT = 9;
+	
 
 	public Card(String name, int cost, int id) 
 	{
@@ -21,6 +22,6 @@ public class Card {
 	public void paint(Graphics g, int x, int y, int width, int height)
 	{
 		g.drawRect(x,y,width,height);
-		g.drawString(type, x+10, y+10);
+		g.drawString(myName, x+10, y+10);
 	}
 }
