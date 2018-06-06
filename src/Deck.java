@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
 	
@@ -17,7 +18,13 @@ public class Deck {
 		for (Card c : cList) myDeck.add(c);
 	}
 
-	public void shuffle() {
-
+	public void shuffle() 
+	{
+		Collections.shuffle(myDeck);
+	}
+	
+	public Card draw()
+	{
+		return myDeck.remove(0);
 	}
 }
