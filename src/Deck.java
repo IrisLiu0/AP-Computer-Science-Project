@@ -11,6 +11,11 @@ public class Deck {
 		myDeck = new ArrayList<Card>();
 		for (Card c : tempList) myDeck.add(c);
 	}
+	
+	public Deck(Card[] cList)
+	{
+		for (Card c : cList) myDeck.add(c);
+	}
 
 	public void shuffle() {
 
