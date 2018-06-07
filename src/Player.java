@@ -1,6 +1,5 @@
 import java.awt.Graphics;
 import java.util.ArrayList;
-
 import com.sun.javafx.tk.Toolkit;
 
 public class Player
@@ -10,9 +9,7 @@ public class Player
 	private ArrayList<Minion> field;
 	private int currentMana, maxMana;
 	
-	public Player()
-	{
-		
+	public Player() {
 		d = new Deck();
 		hand = new ArrayList<Card>();
 		graveyard = new ArrayList<Card>();
@@ -23,14 +20,13 @@ public class Player
 		draw();
 		draw();
 	}
-	
-	public void startGame()
-	{
+
+	public void startGame() {
 		currentMana = 0;
 		d.shuffle();
 		hand.add(d.draw());
 	}
-	
+
 	public void startTurn()
 	{
 		if (maxMana < 5) maxMana++;
@@ -50,6 +46,5 @@ public class Player
 			hand.get(i).paint(g, width/10+width/10*i*4/hand.size(), 800, width/20, (int) (width/20/Card.aspectRatio));
 		}
 	}
-	
-	
+
 }

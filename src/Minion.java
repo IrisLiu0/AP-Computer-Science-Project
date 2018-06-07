@@ -1,17 +1,11 @@
 
-public class Minion extends Card
-{
-	private int atk,def;
+public class Minion extends Card {
+	private int atk, def;
 
-	public Minion(String name, int cost, int id, int attack, int defense)
-	{
+	public Minion(String name, int cost, int id, int atk, int def) {
 		super(name, cost, id);
-		
+		this.atk = atk;
+		this.def = def;
 	}
-	
-		
-		
-		
-	
 
 }

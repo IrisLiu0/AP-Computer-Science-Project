@@ -1,18 +1,15 @@
 
-public class Enemy
-{
+public class Enemy {
 
 	private Deck myDeck;
-	
-	public Enemy()
-	{
+
+	public Enemy() {
 		Card[] enemies = {};
 		myDeck = new Deck(enemies);
 	}
-	
-	public void startGame()
-	{
-		
+
+	public void startGame() {
+
 	}
-	
+
 }

@@ -8,21 +8,18 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.Timer;
 
-
-public class GraphicsEngine extends Component implements ActionListener, MouseListener, MouseMotionListener
-{
+public class GraphicsEngine extends Component implements ActionListener, MouseListener, MouseMotionListener {
 	private Timer t;
 	private Player p;
-	
-	public GraphicsEngine()
-	{
+
+	public GraphicsEngine() {
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
 		p = new Player();
 		t = new Timer(10, this);
 		t.start();
 	}
-	
+
 	private void update()
 	{
 		gameLoop();
@@ -38,46 +35,37 @@ public class GraphicsEngine extends Component implements ActionListener, MouseLi
 	{
 		//g.fillRect(0, 0, this.getWidth(), this.getHeight());
 		p.drawHand(g, this.getWidth());
-		
 	}
 
-	public void actionPerformed(ActionEvent e) 
-	{
+	public void actionPerformed(ActionEvent e) {
 		update();
 	}
 
-	public void mouseDragged(MouseEvent e)
-	{
+	public void mouseDragged(MouseEvent e) {
 
 	}
 
-	public void mouseMoved(MouseEvent e)
-	{
+	public void mouseMoved(MouseEvent e) {
 
 	}
 
-	public void mouseClicked(MouseEvent e)
-	{
+	public void mouseClicked(MouseEvent e) {
 
 	}
 
-	public void mouseEntered(MouseEvent e)
-	{
+	public void mouseEntered(MouseEvent e) {
 
 	}
 
-	public void mouseExited(MouseEvent e)
-	{
+	public void mouseExited(MouseEvent e) {
 
 	}
 
-	public void mousePressed(MouseEvent e)
-	{
+	public void mousePressed(MouseEvent e) {
 
 	}
 
-	public void mouseReleased(MouseEvent e)
-	{
+	public void mouseReleased(MouseEvent e) {
 
 	}
 }

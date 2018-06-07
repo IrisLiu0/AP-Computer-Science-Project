@@ -24,27 +24,16 @@ public class Board extends JFrame implements ActionListener {
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		this.setUndecorated(true);
-		/*this.setLayout(new BorderLayout());
-
-//		this.getContentPane();
-		setResizable(false);
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
-		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		setUndecorated(true);
-		setLayout(new BorderLayout());
+		this.setLayout(new BorderLayout());
 
 		settingButton.setLayout(new FlowLayout(FlowLayout.RIGHT));
-		Icon settingIcon = new ImageIcon(
-				"src/Pictures/setting.png");
+		Icon settingIcon = new ImageIcon("src/Pictures/setting.png");
 		setting = new JButton(settingIcon);
 		settingButton.add(setting);
 		add(settingButton, BorderLayout.SOUTH);
 
 		setting.addActionListener(this);
-		 */
 		this.setVisible(true);
-
-		setVisible(true);
 
 	}
 
