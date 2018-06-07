@@ -11,24 +11,21 @@ import javax.swing.Timer;
 public class GraphicsEngine extends Component implements ActionListener, MouseListener, MouseMotionListener {
 	private Timer t;
 	private Player p;
+	private Gaem loop;
 
 	public GraphicsEngine() {
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
 		p = new Player();
+		loop = new Gaem(p);
 		t = new Timer(10, this);
 		t.start();
 	}
 
 	private void update()
 	{
-		gameLoop();
+		loop.gameLoop();
 		repaint();
-	}
-	
-	private void gameLoop()
-	{
-		
 	}
 	
 	public void paint(Graphics g)

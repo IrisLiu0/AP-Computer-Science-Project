@@ -7,5 +7,10 @@ public class Minion extends Card {
 		this.atk = atk;
 		this.def = def;
 	}
+	
+	public void activate(Player p)
+	{
+		p.
+	}
 
 }

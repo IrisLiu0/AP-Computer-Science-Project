@@ -46,5 +46,11 @@ public class Player
 			hand.get(i).paint(g, width/10+width/10*i*4/hand.size(), 800, width/20, (int) (width/20/Card.aspectRatio));
 		}
 	}
+	
+	public void activate(int index)
+	{
+		Card c = hand.get(index);
+		if (c.getMyCost()<currentMana) c.activate();
+	}
 
 }

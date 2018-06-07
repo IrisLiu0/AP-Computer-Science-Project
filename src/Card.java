@@ -18,6 +18,11 @@ public class Card {
 		g.drawRect(x, y, width, height);
 		g.drawString(myName, x + 10, y + 10);
 	}
+	
+	public void activate()
+	{
+		
+	}
 
 	public int getMyCost() {
 		return myCost;
