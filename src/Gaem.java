@@ -1,26 +1,30 @@
 
 public class Gaem {
 
+	private Player player;
+	private Enemy enemy;
 	private int turn;
-	private static int CONTINUE = 0, WIN = 1, LOSE = 2;
+	public static int CONTINUE = 0, WIN = 1, LOSE = 2;
 
-	public Gaem() {
+	public Gaem(Player p) {
 		turn = 0;
-	}
-
-	public void gameLoop() {
-		Player player = new Player();
-		Enemy enemy = new Enemy();
-
+		player = p;
+		enemy = new Enemy();
+		
 		player.startGame();
 		enemy.startGame();
-		while (this.checkWin() == CONTINUE) {
-			turn++;
-			player.startTurn();
-		}
+	}
+
+	public int gameLoop() {
+		turn++;
+		player.startTurn();
+		enemy.startTurn();
+		return this.checkWin();
 	}
 
 	public int checkWin() {
+		if (enemy.isDead()) return WIN;
+		if (player.getLife() <= 0) return LOSE;
 		return CONTINUE;
 	}
 
