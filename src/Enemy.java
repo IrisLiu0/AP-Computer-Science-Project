@@ -8,8 +8,20 @@ public class Enemy {
 		myDeck = new Deck(enemies);
 	}
 
-	public void startGame() {
+	public void startGame() 
+	{
 
+	}
+	
+	public void startTurn() 
+	{
+		
+	}
+	
+	public boolean isDead()
+	{
+		if (myDeck.getSize() == 0) return true;
+		return false;
 	}
 
 }

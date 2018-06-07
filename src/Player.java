@@ -8,17 +8,13 @@ public class Player
 	private ArrayList<Card> hand, graveyard;
 	private ArrayList<Minion> field;
 	private int currentMana, maxMana;
+	private int life;
 	
 	public Player() {
 		d = new Deck();
 		hand = new ArrayList<Card>();
 		graveyard = new ArrayList<Card>();
-		draw();
-		draw();
-		draw();
-		draw();
-		draw();
-		draw();
+		life = 15;
 	}
 
 	public void startGame() {
@@ -51,6 +47,16 @@ public class Player
 	{
 		Card c = hand.get(index);
 		if (c.getMyCost()<currentMana) c.activate();
+	}
+	
+	public int getLife()
+	{
+		return life;
+	}
+	
+	public void changeLife(int c)
+	{
+		life += c;
 	}
 
 }
