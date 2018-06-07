@@ -22,24 +22,12 @@ public class Card {
 		return myCost;
 	}
 
-	public void setMyCost(int myCost) {
-		this.myCost = myCost;
-	}
-
 	public int getMyID() {
 		return myID;
 	}
 
-	public void setMyID(int myID) {
-		this.myID = myID;
-	}
-
 	public String getMyName() {
 		return myName;
-	}
-
-	public void setMyName(String myName) {
-		this.myName = myName;
 	}
 
 }
