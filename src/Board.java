@@ -1,17 +1,11 @@
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
-public class Board extends JFrame 
+import javax.swing.JFrame;
+
+public class Board extends JFrame
 {
 
-	JPanel settingButton = new JPanel();
-	JButton setting;
-
-	JFrame exit = new JFrame();
-	JButton exitYes = new JButton("Yes"), exitNo = new JButton("No");
-
-	public Board() {
+	public Board()
+	{
 
 		add(new GraphicsEngine());
 		this.setResizable(false);
@@ -22,8 +16,7 @@ public class Board extends JFrame
 
 	}
 
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args) {
 		Board bb = new Board();
 	}
 
