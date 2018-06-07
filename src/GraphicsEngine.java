@@ -25,13 +25,19 @@ public class GraphicsEngine extends Component implements ActionListener, MouseLi
 	
 	private void update()
 	{
+		gameLoop();
 		repaint();
+	}
+	
+	private void gameLoop()
+	{
+		
 	}
 	
 	public void paint(Graphics g)
 	{
 		//g.fillRect(0, 0, this.getWidth(), this.getHeight());
-		p.drawHand(g);
+		p.drawHand(g, this.getWidth());
 		
 	}
 
