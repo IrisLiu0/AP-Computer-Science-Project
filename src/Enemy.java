@@ -32,5 +32,18 @@ public class Enemy {
 		if (myDeck.getSize() == 0) return true;
 		return false;
 	}
-
+	
+	public void attack(Player p, Minion e)
+	{
+		if (p.getField().size() == 0)
+		{
+			p.changeLife(e.getAttack()*-1);
+		}
+		else 
+		{
+			Minion target = p.getRandom();
+			
+		}
+	}
+	
 }

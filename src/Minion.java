@@ -2,34 +2,42 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class Minion extends Card {
+public class Minion extends Card
+{
 	private int atk, def;
 
-	public Minion(String name, int cost, int id, int atk, int def) {
+	public Minion(String name, int cost, int id, int atk, int def)
+	{
 		super(name, cost, id);
 		this.atk = atk;
 		this.def = def;
 		init(id);
 	}
 
-	public int getAttack() {
+	public int getAttack()
+	{
 		return atk;
 	}
 
-	public int getDefense() {
+	public int getDefense()
+	{
 		return def;
 	}
 
-	public void setAttack(int atk) {
+	public void setAttack(int atk)
+	{
 		this.atk = atk;
 	}
 
-	public void setDefense(int def) {
+	public void setDefense(int def)
+	{
 		this.def = def;
 	}
 
-	private void init(int id) {
-		switch (id) {
+	private void init(int id)
+	{
+		switch (id)
+		{
 		case 1:
 			super.setImg("Pictures//Ego-bloated Blob.png");
 			break;
@@ -52,17 +60,33 @@ public class Minion extends Card {
 		System.out.println(id);
 	}
 
-	public void activate(Player p) {
+	public void activate(Player p)
+	{
 
 	}
 
-	public void hpUp(Minion target, int x) {
+	public void hpUp(Minion target, int x)
+	{
 		target.setDefense(target.getDefense() + 1);
 	}
 
-	public void trade(Minion target, int hp, int dmg) {
+	public void trade(Minion target, int hp, int dmg)
+	{
 		target.setAttack(target.getAttack() + dmg);
 		target.setDefense(target.getDefense() - hp);
+	}
+	
+	public void fight(Minion target)
+	{
+		this.setDefense(this.getDefense()-target.getAttack());
+		target.setDefense(target.getAttack()-this.getDefense());
+		if (target.getDefense()<=0) target.die();
+		if (this.getDefense()<=0) target.die();
+	}
+	
+	public void die()
+	{
+		
 	}
 
 }
