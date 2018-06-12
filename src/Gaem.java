@@ -6,10 +6,10 @@ public class Gaem {
 	private int turn;
 	public static int CONTINUE = 0, WIN = 1, LOSE = 2;
 
-	public Gaem(Player p) {
+	public Gaem(Player p, Enemy e) {
 		turn = 0;
 		player = p;
-		enemy = new Enemy();
+		enemy = e;
 		
 		player.startGame();
 		enemy.startGame();
