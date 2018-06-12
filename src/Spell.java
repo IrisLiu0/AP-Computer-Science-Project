@@ -27,14 +27,28 @@ public class Spell extends Card
 		}
 	}
 
+	public void activate(int id)
+	{
+		switch(id){
+		case 4:
+			
+			break;
+		}
+	}
+
 	public void defDown(Minion target, int x)
 	{
 		target.setDefense(x);
 	}
 
-	public void heal(/* target */ int hp)
+	public void heal(Minion target, int hp)
 	{
+		target.setDefense(target.getDefense() + hp);
+	}
 
+	public void heal(Player p, int hp)
+	{
+		p.changeLife(-hp);
 	}
 
 	public void summon()

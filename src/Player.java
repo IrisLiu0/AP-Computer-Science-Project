@@ -113,7 +113,7 @@ public class Player
 
 	public void changeLife(int c)
 	{
-		life += c;
+		life -= c;
 	}
 
 }
