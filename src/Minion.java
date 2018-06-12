@@ -75,5 +75,18 @@ public class Minion extends Card
 		target.setAttack(target.getAttack() + dmg);
 		target.setDefense(target.getDefense() - hp);
 	}
+	
+	public void fight(Minion target)
+	{
+		this.setDefense(this.getDefense()-target.getAttack());
+		target.setDefense(target.getAttack()-this.getDefense());
+		if (target.getDefense()<=0) target.die();
+		if (this.getDefense()<=0) target.die();
+	}
+	
+	public void die()
+	{
+		
+	}
 
 }
