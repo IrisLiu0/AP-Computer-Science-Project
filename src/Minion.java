@@ -11,11 +11,25 @@ public class Minion extends Card {
 		this.def = def;
 		init(id);
 	}
-	
-	private void init(int id)
-	{
-		switch (id)
-		{
+
+	public int getAttack() {
+		return atk;
+	}
+
+	public int getDefense() {
+		return def;
+	}
+
+	public void setAttack(int atk) {
+		this.atk = atk;
+	}
+
+	public void setDefense(int def) {
+		this.def = def;
+	}
+
+	private void init(int id) {
+		switch (id) {
 		case 1:
 			super.setImg("Pictures//Ego-bloated Blob.png");
 			break;
@@ -37,10 +51,18 @@ public class Minion extends Card {
 		}
 		System.out.println(id);
 	}
-	
-	public void activate(Player p)
-	{
-		
+
+	public void activate(Player p) {
+
+	}
+
+	public void hpUp(Minion target, int x) {
+		target.setDefense(target.getDefense() + 1);
+	}
+
+	public void trade(Minion target, int hp, int dmg) {
+		target.setAttack(target.getAttack() + dmg);
+		target.setDefense(target.getDefense() - hp);
 	}
 
 }
