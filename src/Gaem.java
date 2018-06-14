@@ -13,6 +13,8 @@ public class Gaem {
 		
 		player.startGame();
 		enemy.startGame();
+		
+		
 	}
 
 	public int gameLoop() {
