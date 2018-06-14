@@ -40,14 +40,25 @@ public class Enemy
 
 	public void attack(Player p, Minion e)
 	{
-		if (p.getField().size() == 0)
+		for (Minion m : field)
 		{
-			p.changeLife(e.getAttack() * -1);
-		} else
-		{
-			Minion target = p.getRandomMinion();
-
+			if (p.getField().size() == 0)
+			{
+				p.changeLife(e.getAttack() * -1);
+			} else
+			{
+				Minion target = p.getRandomMinion();
+				m.fight(target);
+				if (m.getDefense() <= 0) destroyCard(m);
+				if (target.getDefense() <= 0) destroyCard(target);
+			}
 		}
+		
+	}
+	
+	public void destroyCard(Card c)
+	{
+		//Code should remove c from the field and move it to the graveyard
 	}
 
 }

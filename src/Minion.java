@@ -81,14 +81,19 @@ public class Minion extends Card
 		this.setDefense(this.getDefense() - target.getAttack());
 		target.setDefense(target.getAttack() - this.getDefense());
 		if (target.getDefense() <= 0)
-			target.die();
+			target.enemyDie();
 		if (this.getDefense() <= 0)
-			this.die();
+			this.playerDie();
 	}
 
-	public void die()
+	public void playerDie(Player p)
 	{
 
+	}
+	
+	public void enemyDie(Enemy e)
+	{
+		
 	}
 
 }

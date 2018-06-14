@@ -21,7 +21,7 @@ public class Board extends JFrame implements KeyListener
 	}
 
 	public static void main(String[] args) {
-		Board bb = new Board();
+		Board b = new Board();
 	}
 
 	public void keyPressed(KeyEvent e) {

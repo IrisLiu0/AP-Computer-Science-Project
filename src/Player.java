@@ -44,6 +44,19 @@ public class Player
 			maxMana++;
 		currentMana = maxMana;
 		hand.add(d.draw());
+		
+		//Display text prompting player to select a card to play from their hand
+		//Code to wait for player to select a card in hand, then activate selected card once selected (use .activate and .select methods)
+		
+		//Loop below lines until NONE is selected 
+		//	Display text prompting player to select a minion to attack, or select NONE
+		//	Code to wait for player to select a minion or NONE button
+		//	If minion selected:
+		//		Display text prompting player to select an enemy minion as target
+		//		Code to wait for player to select an enemy minion
+		//		Selected player minion uses the .fight method with the target as an argument
+		//		Check defense of both minions, if either one is dead use the .destroyCard method in either the player or enemy class to move it from the field to the graveyard
+		//		If player minion survives, disable its ability to attack again this turn
 	}
 
 	public void draw(int num)
@@ -105,6 +118,7 @@ public class Player
 			}
 		}
 	}
+	//Modify to return selected card
 
 	public int getLife()
 	{
@@ -114,6 +128,11 @@ public class Player
 	public void changeLife(int c)
 	{
 		life -= c;
+	}
+	
+	public void destroyCard(Card c)
+	{
+		//Code should remove c from the field and move it to the graveyard
 	}
 
 }
