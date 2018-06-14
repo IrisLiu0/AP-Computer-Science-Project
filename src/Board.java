@@ -1,14 +1,11 @@
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import javax.swing.JFrame;
 
-public class Board extends JFrame implements KeyListener
-{
+public class Board extends JFrame implements KeyListener {
 	GraphicsEngine g;
-	public Board()
-	{
+
+	public Board() {
 		g = new GraphicsEngine();
 		addKeyListener(g);
 		add(g);
@@ -30,13 +27,13 @@ public class Board extends JFrame implements KeyListener
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		
+
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

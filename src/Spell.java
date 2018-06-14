@@ -1,17 +1,13 @@
 
-public class Spell extends Card
-{
+public class Spell extends Card {
 
-	public Spell(String name, int cost, int id)
-	{
+	public Spell(String name, int cost, int id) {
 		super(name, cost, id);
 		init(id);
 	}
 
-	private void init(int id)
-	{
-		switch (id)
-		{
+	private void init(int id) {
+		switch (id) {
 		case 0:
 			super.setImg("Pictures//Weaken.png");
 			break;
@@ -27,37 +23,38 @@ public class Spell extends Card
 		}
 	}
 
-	public void activate(int id)
-	{
-		switch(id){
+	public void activate(int id, Minion target) {
+		Effects ee = new Effects();
+		switch (id) {
+		case 0:
+			ee.defDown(target, 1);
+			break;
 		case 4:
-			
+			ee.defDown(target, 2);
+			break;
+		case 5:
+			// idk how to do this one
+			break;
+		case 8:
+			// or this one
 			break;
 		}
 	}
 
-	public void defDown(Minion target, int x)
-	{
-		target.setDefense(x);
+	public void activate(int id, Player p) {
+		Effects ee = new Effects();
+		switch (id) {
+		case 4:
+			ee.heal(p, 2);
+			break;
+		}
 	}
 
-	public void heal(Minion target, int hp)
-	{
-		target.setDefense(target.getDefense() + hp);
-	}
-
-	public void heal(Player p, int hp)
-	{
-		p.changeLife(-hp);
-	}
-
-	public void summon()
-	{
+	public void summon() {
 
 	}
 
-	public void destroy()
-	{
+	public void destroy() {
 
 	}
 

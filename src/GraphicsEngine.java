@@ -13,8 +13,8 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-public class GraphicsEngine extends Component implements ActionListener, MouseListener, MouseMotionListener, KeyListener
-{
+public class GraphicsEngine extends Component
+		implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
 	private Timer t;
 	private Player p;
 	private Enemy e;
@@ -22,8 +22,7 @@ public class GraphicsEngine extends Component implements ActionListener, MouseLi
 	private Image back, exit;
 	private boolean pause = false;
 
-	public GraphicsEngine() 
-	{
+	public GraphicsEngine() {
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
 		this.addKeyListener(this);
@@ -36,27 +35,25 @@ public class GraphicsEngine extends Component implements ActionListener, MouseLi
 		t.start();
 	}
 
-	private void update()
-	{
-		//loop.gameLoop();
+	private void update() {
+		// loop.gameLoop();
 		repaint();
 	}
-	
-	public void paint(Graphics g)
-	{
-		//g.fillRect(0, 0, this.getWidth(), this.getHeight());
-		/*switch (loop.checkWin())
-		{
-		
-		}*/
+
+	public void paint(Graphics g) {
+		// g.fillRect(0, 0, this.getWidth(), this.getHeight());
+		/*
+		 * switch (loop.checkWin()) {
+		 * 
+		 * }
+		 */
 		g.drawImage(back, 0, 0, this.getWidth(), this.getHeight(), null);
 		p.drawHand(g, this.getWidth());
 		e.paint(g, getWidth());
-		if (pause)
-		{
-			g.setColor(new Color(50,50,50,150));
+		if (pause) {
+			g.setColor(new Color(50, 50, 50, 150));
 			g.fillRect(0, 0, getWidth(), getHeight());
-			g.drawImage(exit, getWidth()/2-200, getHeight()/2-50, 400, 100, null);
+			g.drawImage(exit, getWidth() / 2 - 200, getHeight() / 2 - 50, 400, 100, null);
 		}
 	}
 
@@ -70,7 +67,7 @@ public class GraphicsEngine extends Component implements ActionListener, MouseLi
 
 	public void mouseMoved(MouseEvent e) {
 		if (!pause)
-		p.hovering(e.getX(), e.getY(), this.getWidth());
+			p.hovering(e.getX(), e.getY(), this.getWidth());
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -86,22 +83,21 @@ public class GraphicsEngine extends Component implements ActionListener, MouseLi
 	}
 
 	public void mousePressed(MouseEvent e) {
-		if(pause && e.getX() > getWidth()/2-200 && e.getY() > getHeight()/2-50 && e.getX() < getWidth()/2+200 && e.getY() < getHeight()/2+50)
-		{
+		if (pause && e.getX() > getWidth() / 2 - 200 && e.getY() > getHeight() / 2 - 50
+				&& e.getX() < getWidth() / 2 + 200 && e.getY() < getHeight() / 2 + 50) {
 			System.exit(0);
 		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		if (!pause)
-		p.select(e.getX(), e.getY(), this.getWidth());
+			p.select(e.getX(), e.getY(), this.getWidth());
 	}
 
-	
-	public void keyPressed(KeyEvent e) 
-	{
+	public void keyPressed(KeyEvent e) {
 		System.out.println("KEY");
-		if (e.getKeyCode()==KeyEvent.VK_ESCAPE) pause=!pause;
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE)
+			pause = !pause;
 	}
 
 	@Override
@@ -113,6 +109,6 @@ public class GraphicsEngine extends Component implements ActionListener, MouseLi
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
