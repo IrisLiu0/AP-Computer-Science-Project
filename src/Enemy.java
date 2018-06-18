@@ -22,8 +22,9 @@ public class Enemy {
 	}
 
 	public void paint(Graphics g, int width) {
-		// field.get(0).paint(g, width-80, 100, 160, (int)
-		// (160/Card.aspectRatio));
+		if (field.size()>0)
+			field.get(0).paint(g, width-80, 100, 160, (int)(160/Card.aspectRatio));
+		for (int i = 1)
 	}
 
 	public boolean isDead() {

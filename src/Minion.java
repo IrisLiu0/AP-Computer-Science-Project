@@ -43,7 +43,7 @@ public class Minion extends Card {
 			super.setImg("Pictures//Healthy Blob.png");
 			break;
 		case 7:
-			super.setImg("Pictures//Sneak Blob.png");
+			super.setImg("Pictures//Sneaky Blob.png");
 			break;
 		case 9:
 			super.setImg("Pictures//Absolute Beefcake.png");

@@ -72,12 +72,18 @@ public class Player {
 		}
 		g.setColor(new Color(50, 50, 50, 100));
 		if (hover != -1)
+		{
 			g.fillRect(width / 2 - (width / 16) * (hand.size()) + width / 8 * hover, 800, width / 8,
 					(int) (width / 8 / Card.aspectRatio));
+			hand.get(hover).paint(g, width/20, 150, width/5, (int) (width/5/Card.aspectRatio));
+		}
 		g.setColor(new Color(50, 50, 50, 150));
 		if (selected != -1)
+		{
 			g.fillRect(width / 2 - (width / 16) * (hand.size()) + width / 8 * selected, 800, width / 8,
 					(int) (width / 8 / Card.aspectRatio));
+		}
+			
 
 	}
 
