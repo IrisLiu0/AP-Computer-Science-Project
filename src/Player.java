@@ -11,8 +11,8 @@ public class Player {
 	private int currentMana, maxMana;
 	private int life;
 	private int hover = -1, selected = -1;
-	private Boolean isSelecting = true;
-	private Boolean isTakingTurn = true;
+	private Boolean isSelecting;
+	private Boolean isTakingTurn;
 
 	public Player() {
 		field = new ArrayList<Minion>();
@@ -44,6 +44,8 @@ public class Player {
 		currentMana = maxMana;
 		hand.add(d.draw());
 		
+		isSelecting = true;
+		
 		// Display text prompting player to select a card to play from their
 		// hand
 		
@@ -54,7 +56,7 @@ public class Player {
 		}
 		isSelecting = false;
 		
-		while() {
+		while(true) {
 			
 		}
 		// Loop below lines until NONE is selected
