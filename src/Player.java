@@ -43,20 +43,14 @@ public class Player {
 		currentMana = maxMana;
 		hand.add(d.draw());
 		
-
-
 		// Display text prompting player to select a card to play from their
 		// hand
-		if(isSelecting = true) {
-			
-		}		
 		
 		// Code to wait for player to select a card in hand, then activate
 		// selected card once selected (use .activate and .select methods)
 		while (selected != -1) {
 			
 		}
-		
 		// Loop below lines until NONE is selected
 		// Display text prompting player to select a minion to attack, or select
 		// NONE
@@ -96,8 +90,10 @@ public class Player {
 			g.fillRect(width / 2 - (width / 16) * (hand.size()) + width / 8 * selected, 800, width / 8,
 					(int) (width / 8 / Card.aspectRatio));
 		}
+		if(isSelecting == true) {
+		g.drawString("Please select a card to play.",0,0);		
+		}	
 		
-		g.drawString("Please select a card to play.",0,0);	
 
 	}
 	
