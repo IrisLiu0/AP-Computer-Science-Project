@@ -65,7 +65,7 @@ public class Player {
 			Object[] options = { "OK", "CANCEL" };
 			int option = JOptionPane.showOptionDialog(null, "Please select one", "Selection",
 					JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,
-					null, options, null);
+					null, options, JOptionPane.CLOSED_OPTION);
 		
 			if(option == null || option == 2) {
 				isTakingTurn = false;
