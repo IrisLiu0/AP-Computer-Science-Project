@@ -27,14 +27,12 @@ public class Card {
 	public void activate() {
 
 	}
-	
-	public void setType(int type)
-	{
-		this.type=type;
+
+	public void setType(int type) {
+		this.type = type;
 	}
-	
-	public int getType()
-	{
+
+	public int getType() {
 		return type;
 	}
 
