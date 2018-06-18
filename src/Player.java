@@ -60,16 +60,24 @@ public class Player {
 		while(true) {
 			isTakingTurn = true;
 			
-		String[] Object = {"Minion", "Card", "None"};
+		Object[] Options = {"Minion", "Card", "None"};
 		
 		Object[] options = { "OK", "CANCEL" };
 		int option = JOptionPane.showOptionDialog(null, "Please select one", "Selection",
 		JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,
 		null, options, null);
 		
-		
-		
+		if(option = null || option == 2) {
+			
 		}
+		else if(option == 1) {
+			isTakingTurn = false;
+		}
+		else {
+			BREAK
+		}
+		
+		
 		
 		// Loop below lines until NONE is selected
 		// Display text prompting player to select a minion to attack, or select
