@@ -20,8 +20,9 @@ public class Player {
 		d.shuffle();
 		hand = new ArrayList<Card>();
 		life = 15;
-		maxMana = 1;
+		maxMana = 5;
 		draw(4);
+		currentMana=maxMana;
 	}
 
 	public static ArrayList<Minion> getField() {
@@ -33,7 +34,7 @@ public class Player {
 	}
 
 	public void startGame() {
-		currentMana = 0;
+		//currentMana = 0;
 		d.shuffle();
 		hand.add(d.draw());
 	}
@@ -180,20 +181,25 @@ public class Player {
 		if (y<800 && selected > -1)
 		{
 			Card c = hand.get(selected);
-			switch (c.getType()) {
-			case -1:
-				if (field.size()==5) break;
-				field.add((Minion) c);
-				hand.remove(selected);
-			case 0:
-				c.activate();
-				break;
-			default:
-				for (int i = 0; i < eField.size(); i++)
+			if (c.getMyCost()<=currentMana)
+			{
+				switch (c.getType())
 				{
-					
+				case -1:
+					if (field.size()==5) break;
+					field.add((Minion) c);
+					hand.remove(selected);
+				case 0:
+					c.activate();
+					break;
+				default:
+					for (int i = 0; i < eField.size(); i++)
+					{
+						
+					}
+					break;
 				}
-				break;
+				currentMana-=c.getMyCost();
 			}
 			selected = -1;
 		}
