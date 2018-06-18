@@ -46,10 +46,6 @@ public class Card {
 		return myID;
 	}
 
-	public String getMyName() {
-		return myName;
-	}
-	
 	public String toString() {
 		return myName;
 	}

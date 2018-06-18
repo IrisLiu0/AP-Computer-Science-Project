@@ -10,7 +10,6 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
@@ -40,9 +39,8 @@ public class GraphicsEngine extends Component
 		// loop.gameLoop();
 		repaint();
 	}
-	
-	private void endTurn() 
-	{
+
+	private void endTurn() {
 
 	}
 
@@ -63,14 +61,15 @@ public class GraphicsEngine extends Component
 			g.fillRect(0, 0, getWidth(), getHeight());
 			g.drawImage(exit, getWidth() / 2 - 200, getHeight() / 2 - 50, 400, 100, null);
 		}
-		g.setColor(new Color(50,50,50));
-		g.fillRect(this.getWidth()/12*9, this.getHeight()/2-this.getHeight()/12, this.getWidth()/10, this.getHeight()/10);
-		g.setColor(new Color(255,255,255));
-		g.drawRect(this.getWidth()/12*9, this.getHeight()/2-this.getHeight()/12, this.getWidth()/10, this.getHeight()/10);
-		g.setFont(new Font("ARIAL", 30,30));
-		g.drawString("END TURN", this.getWidth()/16*12+20, this.getHeight()/2 - this.getHeight()/40);
-		
-		
+		g.setColor(new Color(50, 50, 50));
+		g.fillRect(this.getWidth() / 12 * 9, this.getHeight() / 2 - this.getHeight() / 12, this.getWidth() / 10,
+				this.getHeight() / 10);
+		g.setColor(new Color(255, 255, 255));
+		g.drawRect(this.getWidth() / 12 * 9, this.getHeight() / 2 - this.getHeight() / 12, this.getWidth() / 10,
+				this.getHeight() / 10);
+		g.setFont(new Font("ARIAL", 30, 30));
+		g.drawString("END TURN", this.getWidth() / 16 * 12 + 20, this.getHeight() / 2 - this.getHeight() / 40);
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -106,15 +105,16 @@ public class GraphicsEngine extends Component
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		if (!pause)
-		{
-			//if (g.fillRect(this.getWidth()/12*9, this.getHeight()/2-this.getHeight()/12, this.getWidth()/10, this.getHeight()/10);)
-			if (e.getX()>this.getWidth()/12*9 && e.getY()>this.getHeight()/2-this.getHeight()/12 && e.getX()<this.getWidth()/12*9 + this.getWidth()/10 && e.getY()<this.getHeight()/2-this.getHeight()/12+this.getHeight()/10)
-			{
+		if (!pause) {
+			// if (g.fillRect(this.getWidth()/12*9,
+			// this.getHeight()/2-this.getHeight()/12, this.getWidth()/10,
+			// this.getHeight()/10);)
+			if (e.getX() > this.getWidth() / 12 * 9 && e.getY() > this.getHeight() / 2 - this.getHeight() / 12
+					&& e.getX() < this.getWidth() / 12 * 9 + this.getWidth() / 10
+					&& e.getY() < this.getHeight() / 2 - this.getHeight() / 12 + this.getHeight() / 10) {
 				endTurn();
-			}
-			else
-			p.select(e.getX(), e.getY(), this.getWidth());
+			} else
+				p.select(e.getX(), e.getY(), this.getWidth());
 		}
 	}
 

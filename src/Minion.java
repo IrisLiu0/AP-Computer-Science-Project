@@ -61,7 +61,9 @@ public class Minion extends Card {
 			break;
 		case 2:
 			// access minion array, give each +1 health
-
+			for (int i = 0; i < Player.getField().size(); i++) {
+				Player.getField().get(i).setDefense(Player.getField().get(i).getDefense() + 1);
+			}
 			break;
 		case 3:
 			e.atkUp(target, 2);
