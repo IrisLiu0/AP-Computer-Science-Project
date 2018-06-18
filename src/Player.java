@@ -48,7 +48,7 @@ public class Player {
 		// Display text prompting player to select a card to play from their
 		// hand
 		if(isSelecting = true) {
-			g.drawString("Please select a card to play.");
+			
 		}		
 		
 		// Code to wait for player to select a card in hand, then activate
@@ -96,7 +96,8 @@ public class Player {
 			g.fillRect(width / 2 - (width / 16) * (hand.size()) + width / 8 * selected, 800, width / 8,
 					(int) (width / 8 / Card.aspectRatio));
 		}
-			
+		
+		g.drawString("Please select a card to play.",0,0);	
 
 	}
 	
