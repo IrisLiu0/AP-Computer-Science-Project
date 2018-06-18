@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import com.sun.javafx.tk.Toolkit;
 import javax.swing.JOptionPane;
 
 public class Player {
