@@ -7,9 +7,6 @@ public class Enemy {
 	private ArrayList<Minion> field;
 
 	public Enemy() {
-		Card[] enemies = {};
-		// myDeck = new Deck(enemies);
-
 		field = new ArrayList<Minion>();
 		field.addAll(Arrays.asList(new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2),
 				new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2),

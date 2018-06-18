@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class Player {
 	private Deck d;
-	private ArrayList<Card> hand, graveyard;
+	private ArrayList<Card> hand;
 	private static ArrayList<Minion> field;
 	private int currentMana, maxMana;
 	private int life;
@@ -17,8 +17,8 @@ public class Player {
 	public Player() {
 		field = new ArrayList<Minion>();
 		d = new Deck();
+		d.shuffle();
 		hand = new ArrayList<Card>();
-		graveyard = new ArrayList<Card>();
 		life = 15;
 		maxMana = 1;
 		draw(4);
