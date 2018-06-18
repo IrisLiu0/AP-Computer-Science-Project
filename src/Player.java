@@ -12,8 +12,8 @@ public class Player {
 	private int currentMana, maxMana;
 	private int life;
 	private int hover = -1, selected = -1;
-	private Boolean isSelecting;
-	private Boolean isTakingTurn;
+	private boolean isSelecting = false;
+	private boolean isTakingTurn = false;
 
 	public Player() {
 		field = new ArrayList<Minion>();
