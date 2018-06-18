@@ -12,6 +12,7 @@ public class Player {
 	private int life;
 	private int hover = -1, selected = -1;
 	private Boolean isSelecting = true;
+	private Boolean isTakingTurn = true;
 
 	public Player() {
 		field = new ArrayList<Minion>();
@@ -49,6 +50,10 @@ public class Player {
 		// Code to wait for player to select a card in hand, then activate
 		// selected card once selected (use .activate and .select methods)
 		while (selected != -1) {
+			
+		}
+		while (isSelecting) {
+			
 			
 		}
 		// Loop below lines until NONE is selected
