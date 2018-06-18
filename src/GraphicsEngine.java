@@ -114,7 +114,7 @@ public class GraphicsEngine extends Component
 				endTurn();
 			}
 			else
-			p.select(e.getX(), e.getY(), this.getWidth());
+			p.select(e.getX(), e.getY(), this.getWidth(), this.e.getField());
 		}
 	}
 

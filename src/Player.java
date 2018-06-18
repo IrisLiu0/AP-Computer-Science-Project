@@ -121,7 +121,7 @@ public class Player {
 			hand.get(hover).paint(g, width/20, 150, width/5, (int) (width/5/Card.aspectRatio));
 		}
 		g.setColor(new Color(50, 50, 50, 150));
-		if (selected != -1)
+		if (selected > -1)
 		{
 			g.fillRect(width / 2 - (width / 16) * (hand.size()) + width / 8 * selected, 800, width / 8,
 					(int) (width / 8 / Card.aspectRatio));
@@ -138,6 +138,11 @@ public class Player {
 		for (int i = 0; i < field.size(); i++) {
 			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 500, width / 10,
 					(int) (width / 10 / Card.aspectRatio));
+		}
+		if (selected < -1)
+		{
+			g.setColor(new Color(50,50, 50, 150));
+			g.fillRect(width / 2 - (width / 20) * (field.size()) + width / 10 * (-2-selected), 500, width/10, (int) (width / 10 / Card.aspectRatio));
 		}
 	}
 	
@@ -167,7 +172,7 @@ public class Player {
 		}
 	}
 
-	public void select(int x, int y, int width) {
+	public void select(int x, int y, int width, ArrayList<Minion> eField) {
 		for (int i = 0; i < hand.size(); i++) {
 			if (width / 2 - (width / 16) * (hand.size()) + width / 8 * i < x && 800 < y
 					&& width / 2 - (width / 16) * (hand.size()) + width / 8 * i + width / 8 > x
@@ -178,19 +183,47 @@ public class Player {
 					selected = -1;
 			}
 		}
-		if (y<800 && selected != -1)
+		if (y<800 && selected > -1)
 		{
+			System.out.println("SHIT");
 			Card c = hand.get(selected);
 			switch (c.getType())
 			{
 			case -1:
+				if (field.size()==5) break;
 				field.add((Minion) c);
 				hand.remove(selected);
 			case 0:
 				c.activate();
 				break;
+			default:
+				for (int i = 0; i < eField.size(); i++)
+				{
+					
+				}
+				break;
 			}
 			selected = -1;
+		}
+		else if (y<800 && y > 500)
+		{
+			
+			for (int i = 0; i < field.size(); i++)
+			{
+				//field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 500, width / 10,
+						//(int) (width / 10 / Card.aspectRatio));
+				if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 500 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 500 + (int) (width / 10 / Card.aspectRatio))
+				{
+					selected = -2-i;
+				}
+			}
+		}
+		else if (y<500)
+		{
+			for (int i = 0; i < eField.size(); i++)
+			{
+				
+			}
 		}
 	}
 	// Modify to return selected card

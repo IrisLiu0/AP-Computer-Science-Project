@@ -48,6 +48,11 @@ public class Enemy {
 		}
 
 	}
+	
+	public ArrayList<Minion> getField()
+	{
+		return field;
+	}
 
 	public void destroyCard(Card c) {
 		// Code should remove c from the field and move it to the graveyard
