@@ -45,40 +45,41 @@ public class Player {
 		currentMana = maxMana;
 		hand.add(d.draw());
 		
-		isSelecting = true;
-		
-		// Display text prompting player to select a card to play from their
-		// hand
-		
-		// Code to wait for player to select a card in hand, then activate
-		// selected card once selected (use .activate and .select methods)
-		while (selected != -1) {
-			
-		}
-		isSelecting = false;
 		
 		while(true) {
 			isTakingTurn = true;
 			
 			Object[] Options = {"Minion", "Card", "None"};
 		
-			Object[] options = { "OK", "CANCEL" };
 			int option = JOptionPane.showOptionDialog(null, "Please select one", "Selection",
 					JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,
-					null, options, JOptionPane.CLOSED_OPTION);
+					null, Options,null);
 		
-			if(option == null || option == 2) {
+			if(option ==  JOptionPane.CLOSED_OPTION || option == 2) {
 				isTakingTurn = false;
 				break;
 			
 			}
 			else if(option == 1) {
-			Options = (Object[])field.toArray();
-			
+				isSelecting = true;
+				selected = -1;
+				
+				// Display text prompting player to select a card to play from their
+				// hand
+				
+				// Code to wait for player to select a card in hand, then activate
+				// selected card once selected (use .activate and .select methods)
+				while (selected != -1) {
+					
+				}
+				isSelecting = false;
+				
+				this.activate(selected);
+				selected = -1;
 			
 			}
 			else {
-				
+				Options = (Object[])field.toArray();	
 				
 			
 			}
