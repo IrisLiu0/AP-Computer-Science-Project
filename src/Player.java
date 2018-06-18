@@ -67,7 +67,7 @@ public class Player {
 
 	public void drawHand(Graphics g, int width) {
 		for (int i = 0; i < hand.size(); i++) {
-			hand.get(i).paint(g, width / 2 - (width / 16) * (hand.size()) + width / 8 * i, 600, width / 8,
+			hand.get(i).paint(g, width / 2 - (width / 16) * (hand.size()) + width / 8 * i, 800, width / 8,
 					(int) (width / 8 / Card.aspectRatio));
 		}
 		g.setColor(new Color(50, 50, 50, 100));
@@ -90,7 +90,7 @@ public class Player {
 	public void drawField(Graphics g, int width)
 	{
 		for (int i = 0; i < field.size(); i++) {
-			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 800, width / 10,
+			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 500, width / 10,
 					(int) (width / 10 / Card.aspectRatio));
 		}
 	}
