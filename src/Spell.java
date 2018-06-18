@@ -37,7 +37,7 @@ public class Spell extends Card {
 			ee.defDown(target, 2);
 			break;
 		case 5:
-			// idk how to do this one
+			
 			break;
 		case 8:
 			// or this one

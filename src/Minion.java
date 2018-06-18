@@ -1,6 +1,3 @@
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 
 public class Minion extends Card {
 	private int atk, def;
@@ -56,12 +53,10 @@ public class Minion extends Card {
 	public void activate(int id, Minion target) {
 		Effects e = new Effects();
 		switch (id) {
-		case 1:
-			// allow it to attack when it is played
-			break;
 		case 2:
-			// access minion array, give each +1 health
-
+			for (int i = 0; i < Player.getField().size(); i++) {
+				Player.getField().get(i).setDefense(Player.getField().get(i).getDefense() + 1);
+			}
 			break;
 		case 3:
 			e.atkUp(target, 2);
@@ -69,9 +64,6 @@ public class Minion extends Card {
 			break;
 		case 6:
 			e.hpUp(target, 3);
-			break;
-		case 7:
-			// make it untargetable by the enemy
 			break;
 		}
 	}
