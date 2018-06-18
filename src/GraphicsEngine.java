@@ -26,7 +26,7 @@ public class GraphicsEngine extends Component
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
 		this.addKeyListener(this);
-		back = new ImageIcon("src//Pictures//newbackground.jpg").getImage();
+		back = new ImageIcon("src//Pictures//new background.jpg").getImage();
 		exit = new ImageIcon("src//Pictures//images.png").getImage();
 		p = new Player();
 		e = new Enemy();
