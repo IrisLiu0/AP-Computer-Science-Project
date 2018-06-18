@@ -52,13 +52,15 @@ public class Player {
 		while (selected != -1) {
 			
 		}
-		while (isSelecting) {
-			
+		isSelecting = false;
+		
+		while() {
 			
 		}
 		// Loop below lines until NONE is selected
 		// Display text prompting player to select a minion to attack, or select
 		// NONE
+		
 		// Code to wait for player to select a minion or NONE button
 		// If minion selected:
 		// Display text prompting player to select an enemy minion as target
