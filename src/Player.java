@@ -136,10 +136,12 @@ public class Player {
 
 	public void displayMana(Graphics g, int width) {
 		g.setColor(new Color(200, 200, 200));
-		g.fillRect(width - 210, 825, 135, 100);
+		g.fillRect(width - 310, 825, 275, 200);
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("ARIAL", 80, 80));
-		g.drawString(currentMana + "/" + maxMana, width - 200, 900);
+		g.drawString(currentMana + "/" + maxMana, width - 300, 900);
+		g.drawString("HP: " + life, width - 300, 1000);
+
 	}
 
 	public void activate(int index) {
