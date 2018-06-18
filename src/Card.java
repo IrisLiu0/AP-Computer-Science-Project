@@ -27,6 +27,16 @@ public class Card {
 	public void activate() {
 
 	}
+	
+	public void setType(int type)
+	{
+		this.type=type;
+	}
+	
+	public int getType()
+	{
+		return type;
+	}
 
 	public int getMyCost() {
 		return myCost;

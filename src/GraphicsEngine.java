@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -39,6 +40,11 @@ public class GraphicsEngine extends Component
 		// loop.gameLoop();
 		repaint();
 	}
+	
+	private void endTurn() 
+	{
+
+	}
 
 	public void paint(Graphics g) {
 		// g.fillRect(0, 0, this.getWidth(), this.getHeight());
@@ -49,12 +55,22 @@ public class GraphicsEngine extends Component
 		 */
 		g.drawImage(back, 0, 0, this.getWidth(), this.getHeight(), null);
 		p.drawHand(g, this.getWidth());
+		p.drawField(g, this.getWidth());
+		p.displayMana(g, this.getWidth());
 		e.paint(g, getWidth());
 		if (pause) {
 			g.setColor(new Color(50, 50, 50, 150));
 			g.fillRect(0, 0, getWidth(), getHeight());
 			g.drawImage(exit, getWidth() / 2 - 200, getHeight() / 2 - 50, 400, 100, null);
 		}
+		g.setColor(new Color(50,50,50));
+		g.fillRect(this.getWidth()/12*9, this.getHeight()/2-this.getHeight()/12, this.getWidth()/10, this.getHeight()/10);
+		g.setColor(new Color(255,255,255));
+		g.drawRect(this.getWidth()/12*9, this.getHeight()/2-this.getHeight()/12, this.getWidth()/10, this.getHeight()/10);
+		g.setFont(new Font("ARIAL", 30,30));
+		g.drawString("END TURN", this.getWidth()/16*12+20, this.getHeight()/2 - this.getHeight()/40);
+		
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -91,7 +107,15 @@ public class GraphicsEngine extends Component
 
 	public void mouseReleased(MouseEvent e) {
 		if (!pause)
+		{
+			//if (g.fillRect(this.getWidth()/12*9, this.getHeight()/2-this.getHeight()/12, this.getWidth()/10, this.getHeight()/10);)
+			if (e.getX()>this.getWidth()/12*9 && e.getY()>this.getHeight()/2-this.getHeight()/12 && e.getX()<this.getWidth()/12*9 + this.getWidth()/10 && e.getY()<this.getHeight()/2-this.getHeight()/12+this.getHeight()/10)
+			{
+				endTurn();
+			}
+			else
 			p.select(e.getX(), e.getY(), this.getWidth());
+		}
 	}
 
 	public void keyPressed(KeyEvent e) {

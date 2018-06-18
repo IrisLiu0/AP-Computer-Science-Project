@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import com.sun.javafx.tk.Toolkit;
@@ -12,10 +13,12 @@ public class Player {
 	private int hover = -1, selected = -1;
 
 	public Player() {
+		field = new ArrayList<Minion>();
 		d = new Deck();
 		hand = new ArrayList<Card>();
 		graveyard = new ArrayList<Card>();
 		life = 15;
+		maxMana =1;
 		draw(4);
 	}
 
@@ -94,6 +97,15 @@ public class Player {
 					(int) (width / 10 / Card.aspectRatio));
 		}
 	}
+	
+	public void displayMana(Graphics g, int width)
+	{
+		g.setColor(new Color(200,200,200));
+		g.fillRect(width-210, 825, 135, 100);
+		g.setColor(Color.BLACK);
+		g.setFont(new Font("ARIAL", 80,80));
+		g.drawString(currentMana+"/"+maxMana, width-200, 900);
+	}
 
 	public void activate(int index) {
 		Card c = hand.get(index);
@@ -121,6 +133,20 @@ public class Player {
 				else
 					selected = -1;
 			}
+		}
+		if (y<800 && selected != -1)
+		{
+			Card c = hand.get(selected);
+			switch (c.getType())
+			{
+			case -1:
+				field.add((Minion) c);
+				hand.remove(selected);
+			case 0:
+				c.activate();
+				break;
+			}
+			selected = -1;
 		}
 	}
 	// Modify to return selected card

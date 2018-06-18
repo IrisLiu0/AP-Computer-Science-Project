@@ -10,15 +10,19 @@ public class Spell extends Card {
 		switch (id) {
 		case 0:
 			super.setImg("Pictures//Weaken.png");
+			super.setType(1);
 			break;
 		case 4:
 			super.setImg("Pictures//Drain Life (1).png");
+			super.setType(2);
 			break;
 		case 5:
 			super.setImg("Pictures//Deadly Shot.png");
+			super.setType(0);
 			break;
 		case 8:
 			super.setImg("Pictures//Panem et Circenses.png");
+			super.setType(0);
 			break;
 		}
 	}

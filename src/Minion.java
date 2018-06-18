@@ -49,6 +49,7 @@ public class Minion extends Card {
 			super.setImg("Pictures//Absolute Beefcake.png");
 			break;
 		}
+		super.setType(-1);
 		System.out.println(id);
 	}
 
