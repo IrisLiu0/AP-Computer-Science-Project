@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import com.sun.javafx.tk.Toolkit;
+import javax.swing.JOptionPane;
 
 public class Player {
 	private Deck d;
@@ -57,8 +58,19 @@ public class Player {
 		isSelecting = false;
 		
 		while(true) {
+			isTakingTurn = true;
 			
+		String[] Object = {"Minion", "Card", "None"};
+		
+		Object[] options = { "OK", "CANCEL" };
+		int option = JOptionPane.showOptionDialog(null, "Please select one", "Selection",
+		JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,
+		null, options, null);
+		
+		
+		
 		}
+		
 		// Loop below lines until NONE is selected
 		// Display text prompting player to select a minion to attack, or select
 		// NONE
