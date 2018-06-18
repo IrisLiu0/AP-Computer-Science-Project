@@ -43,7 +43,7 @@ public class Minion extends Card {
 			super.setImg("Pictures//Healthy Blob.png");
 			break;
 		case 7:
-			super.setImg("Pictures//Sneak Blob.png");
+			super.setImg("Pictures//Sneaky Blob.png");
 			break;
 		case 9:
 			super.setImg("Pictures//Absolute Beefcake.png");
@@ -52,17 +52,34 @@ public class Minion extends Card {
 		System.out.println(id);
 	}
 
-	public void activate(Player p) {
+	public void activate(int id, Minion target) {
+		Effects e = new Effects();
+		switch (id) {
+		case 1:
+			// allow it to attack when it is played
+			break;
+		case 2:
+			// access minion array, give each +1 health
 
+			break;
+		case 3:
+			e.atkUp(target, 2);
+			e.dmg(target, 1);
+			break;
+		case 6:
+			e.hpUp(target, 3);
+			break;
+		case 7:
+			// make it untargetable by the enemy
+			break;
+		}
 	}
 
-	public void hpUp(Minion target, int x) {
-		target.setDefense(target.getDefense() + 1);
-	}
-
-	public void trade(Minion target, int hp, int dmg) {
-		target.setAttack(target.getAttack() + dmg);
-		target.setDefense(target.getDefense() - hp);
+	public void fight(Minion target) {
+		this.setDefense(this.getDefense() - target.getAttack());
+		target.setDefense(target.getAttack() - this.getDefense());
+		// must implement death in player and enemy classes, activated by a
+		// check after fight is executed
 	}
 
 }

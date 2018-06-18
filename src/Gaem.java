@@ -10,9 +10,10 @@ public class Gaem {
 		turn = 0;
 		player = p;
 		enemy = e;
-		
+
 		player.startGame();
 		enemy.startGame();
+
 	}
 
 	public int gameLoop() {
@@ -23,8 +24,10 @@ public class Gaem {
 	}
 
 	public int checkWin() {
-		if (enemy.isDead()) return WIN;
-		if (player.getLife() <= 0) return LOSE;
+		if (enemy.isDead())
+			return WIN;
+		if (player.getLife() <= 0)
+			return LOSE;
 		return CONTINUE;
 	}
 

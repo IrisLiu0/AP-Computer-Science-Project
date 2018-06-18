@@ -16,7 +16,7 @@ public class Deck {
 	}
 
 	public Deck(Card[] cList) {
-		//myDeck.addAll(Arrays.asList(cList));
+		// myDeck.addAll(Arrays.asList(cList));
 	}
 
 	public void shuffle() {
@@ -26,9 +26,8 @@ public class Deck {
 	public Card draw() {
 		return myDeck.remove(0);
 	}
-	
-	public int getSize()
-	{
+
+	public int getSize() {
 		return myDeck.size();
 	}
 }

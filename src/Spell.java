@@ -23,27 +23,39 @@ public class Spell extends Card {
 		}
 	}
 
-	// wtf am I doing
-	// I don't even really understand how this ripoff works
-	// -Iris
-	public void defDown(Minion target, int x) {
-		target.setDefense(x);
+	public void activate(int id, Minion target) {
+		Effects ee = new Effects();
+		switch (id) {
+		case 0:
+			ee.defDown(target, 1);
+			break;
+		case 4:
+			ee.defDown(target, 2);
+			break;
+		case 5:
+			// idk how to do this one
+			break;
+		case 8:
+			// or this one
+			break;
+		}
 	}
 
-	public void trade(/* target */ int dmg, int heal) {
-		/*
-		 * how to target enemy instead of enemy minion? how to heal player?
-		 */
+	public void activate(int id, Player p) {
+		Effects ee = new Effects();
+		switch (id) {
+		case 4:
+			ee.heal(p, 2);
+			break;
+		}
 	}
 
 	public void summon() {
-		/*
-		 * count the enemies on the board summon more minions
-		 */
+
 	}
 
 	public void destroy() {
-		// how to count enemies????
+
 	}
 
 }
