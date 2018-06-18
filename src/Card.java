@@ -49,6 +49,10 @@ public class Card {
 	public String getMyName() {
 		return myName;
 	}
+	
+	public String toString() {
+		return myName;
+	}
 
 	public void setImg(String loc) {
 		img = new ImageIcon("src//" + loc).getImage();

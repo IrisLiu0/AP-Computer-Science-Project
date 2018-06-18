@@ -73,9 +73,13 @@ public class Player {
 			
 			}
 			else if(option == 1) {
+			Options = (Object[])field.toArray();
+			
 			
 			}
 			else {
+				
+				
 			
 			}
 			}
