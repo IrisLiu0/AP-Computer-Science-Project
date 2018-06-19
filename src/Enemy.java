@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Enemy {
 
-	private ArrayList<Minion> field;
+	private static ArrayList<Minion> field;
 
 	public Enemy() {
 		field = new ArrayList<Minion>();
@@ -22,9 +22,8 @@ public class Enemy {
 	}
 
 	public void paint(Graphics g, int width) {
-		
-		for (int i = 0; i < field.size(); i++)
-		{
+
+		for (int i = 0; i < field.size(); i++) {
 			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 125, width / 10,
 					(int) (width / 10 / Card.aspectRatio));
 		}
@@ -51,9 +50,8 @@ public class Enemy {
 		}
 
 	}
-	
-	public ArrayList<Minion> getField()
-	{
+
+	public static ArrayList<Minion> getField() {
 		return field;
 	}
 

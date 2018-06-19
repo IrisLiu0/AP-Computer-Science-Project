@@ -20,9 +20,9 @@ public class Player {
 		d.shuffle();
 		hand = new ArrayList<Card>();
 		life = 15;
+		currentMana = 1;
 		maxMana = 5;
-		draw(4);
-		currentMana=maxMana;
+		draw(5);
 	}
 
 	public static ArrayList<Minion> getField() {
@@ -34,70 +34,9 @@ public class Player {
 	}
 
 	public void startGame() {
-		//currentMana = 0;
+		// currentMana = 0;
 		d.shuffle();
 		hand.add(d.draw());
-	}
-
-	public void startTurn() {
-		if (maxMana < 5)
-			maxMana++;
-		currentMana = maxMana;
-		hand.add(d.draw());
-
-		while (true) {
-			isTakingTurn = true;
-
-			Object[] Options = { "Minion", "Card", "None" };
-
-			int option = JOptionPane.showOptionDialog(null, "Please select one", "Selection",
-					JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, Options, null);
-
-			if (option == JOptionPane.CLOSED_OPTION || option == 2) {
-				isTakingTurn = false;
-				break;
-
-			} else if (option == 1) {
-				isSelecting = true;
-				selected = -1;
-
-				// Display text prompting player to select a card to play from
-				// their
-				// hand
-
-				// Code to wait for player to select a card in hand, then
-				// activate
-				// selected card once selected (use .activate and .select
-				// methods)
-				while (selected != -1) {
-
-				}
-				isSelecting = false;
-
-				this.activate(selected);
-				selected = -1;
-
-			} else {
-				Options = (Object[]) field.toArray();
-
-			}
-		}
-
-		// Loop below lines until NONE is selected
-		// Display text prompting player to select a minion to attack, or select
-		// NONE
-
-		// Code to wait for player to select a minion or NONE button
-		// If minion selected:
-		// Display text prompting player to select an enemy minion as target
-		// Code to wait for player to select an enemy minion
-		// Selected player minion uses the .fight method with the target as an
-		// argument
-		// Check defense of both minions, if either one is dead use the
-		// .destroyCard method in either the player or enemy class to move it
-		// from the field to the graveyard
-		// If player minion survives, disable its ability to attack again this
-		// turn
 	}
 
 	public void draw(int num) {
@@ -135,10 +74,10 @@ public class Player {
 					(int) (width / 10 / Card.aspectRatio));
 			g.drawString(field.get(i).getAttack() + "/" + field.get(i).getDefense(), width / 2 - (width / 20) * (field.size()) + width / 10 * i+60, 720);
 		}
-		if (selected < -1)
-		{
-			g.setColor(new Color(50,50, 50, 150));
-			g.fillRect(width / 2 - (width / 20) * (field.size()) + width / 10 * (-2-selected), 500, width/10, (int) (width / 10 / Card.aspectRatio));
+		if (selected < -1) {
+			g.setColor(new Color(50, 50, 50, 150));
+			g.fillRect(width / 2 - (width / 20) * (field.size()) + width / 10 * (-2 - selected), 500, width / 10,
+					(int) (width / 10 / Card.aspectRatio));
 		}
 	}
 
@@ -180,43 +119,40 @@ public class Player {
 			}
 		}
 
-		if (y<800 && selected > -1)
-		{
+		if (y < 800 && selected > -1) {
 			Card c = hand.get(selected);
-			if (c.getMyCost()<=currentMana)
-			{
-				switch (c.getType())
-				{
+			if (c.getMyCost() <= currentMana) {
+				switch (c.getType()) {
 				case -1:
-					if (field.size()==5) break;
+					if (field.size() == 5)
+						break;
 					field.add((Minion) c);
 					hand.remove(selected);
 				case 0:
 					c.activate();
 					break;
 				default:
-					for (int i = 0; i < eField.size(); i++)
-					{
-						
+					for (int i = 0; i < eField.size(); i++) {
+
 					}
 					break;
 				}
-				currentMana-=c.getMyCost();
+				currentMana -= c.getMyCost();
 			}
 			selected = -1;
-		}
-		else if (y<800 && y > 500)
-		{
-			
-			for (int i = 0; i < field.size(); i++)
-			{
-				//field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 500, width / 10,
-						//(int) (width / 10 / Card.aspectRatio));
-				if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 500 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 500 + (int) (width / 10 / Card.aspectRatio))
-				{
-					selected = -2-i;
+		} else if (y < 800 && y > 500) {
+
+			for (int i = 0; i < field.size(); i++) {
+				// field.get(i).paint(g, width / 2 - (width / 20) *
+				// (field.size()) + width / 10 * i, 500, width / 10,
+				// (int) (width / 10 / Card.aspectRatio));
+				if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 500
+						&& x < width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width / 10
+						&& y < 500 + (int) (width / 10 / Card.aspectRatio)) {
+					selected = -2 - i;
 				}
 			}
+<<<<<<< HEAD
 		}
 		else if (y<500)
 		{
@@ -228,6 +164,11 @@ public class Player {
 					if (field.get(-2-selected).getDefense() <= 0) destroyCard(selected);
 					if (eField.get(i).getDefense() <= 0) eField.remove(i);
 				}
+=======
+		} else if (y < 500) {
+			for (int i = 0; i < eField.size(); i++) {
+
+>>>>>>> e6c67313e6a1a27863e43590bd6d59cd11ef9b80
 			}
 		}
 	}

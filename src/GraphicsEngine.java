@@ -18,7 +18,6 @@ public class GraphicsEngine extends Component
 	private Timer t;
 	private Player p;
 	private Enemy e;
-	private Gaem loop;
 	private Image back, exit;
 	private boolean pause = false;
 
@@ -30,7 +29,6 @@ public class GraphicsEngine extends Component
 		exit = new ImageIcon("src//Pictures//images.png").getImage();
 		p = new Player();
 		e = new Enemy();
-		loop = new Gaem(p, e);
 		t = new Timer(10, this);
 		t.start();
 	}
@@ -114,9 +112,8 @@ public class GraphicsEngine extends Component
 					&& e.getY() < this.getHeight() / 2 - this.getHeight() / 12 + this.getHeight() / 10) {
 				endTurn();
 
-			}
-			else
-			p.select(e.getX(), e.getY(), this.getWidth(), this.e.getField());
+			} else
+				p.select(e.getX(), e.getY(), this.getWidth(), this.e.getField());
 		}
 	}
 
