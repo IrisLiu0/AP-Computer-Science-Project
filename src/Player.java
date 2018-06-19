@@ -137,6 +137,8 @@ public class Player {
 						System.out.println(x);
 						if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
 						{
+							if (c.getType()==2) c.activate(eField.get(i), this);
+							else
 							c.activate(eField.get(i));
 							currentMana -= c.getMyCost();
 						}

@@ -58,4 +58,9 @@ public class Card {
 		img = new ImageIcon("src//" + loc).getImage();
 	}
 
+	public void activate(Minion minion, Player player) 
+	{
+
+	}
+
 }

@@ -45,7 +45,7 @@ public class Spell extends Card {
 		}
 	}
 
-	public void activate(Player p) {
+	public void activate(Minion m, Player p) {
 		Effects ee = new Effects();
 		switch (this.getMyID()) {
 		case 4:
