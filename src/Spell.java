@@ -40,7 +40,7 @@ public class Spell extends Card {
 			int rand = (int) Math.random() * Enemy.getField().size();
 			break;
 		case 8:
-			// or this one
+			Enemy.getField().size(); // idk what this is for
 			break;
 		}
 	}
