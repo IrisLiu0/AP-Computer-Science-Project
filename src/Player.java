@@ -130,17 +130,20 @@ public class Player {
 					hand.remove(selected);
 				case 0:
 					c.activate();
+					currentMana -= c.getMyCost();
 					break;
 				default:
 					for (int i = 0; i < eField.size(); i++) {
+						System.out.println(x);
 						if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
 						{
 							c.activate(eField.get(i));
+							currentMana -= c.getMyCost();
 						}
 					}
 					break;
 				}
-				currentMana -= c.getMyCost();
+				
 			}
 			selected = -1;
 		} else if (y < 800 && y > 500) {
@@ -156,7 +159,7 @@ public class Player {
 				}
 			}
 		}
-		else if (y<500)
+		else if (y<500 && selected < -1)
 		{
 			for (int i = 0; i < eField.size(); i++)
 			{

@@ -27,9 +27,9 @@ public class Spell extends Card {
 		}
 	}
 
-	public void activate(int id, Minion target) {
+	public void activate(Minion target) {
 		Effects ee = new Effects();
-		switch (id) {
+		switch (this.getMyID()) {
 		case 0:
 			ee.defDown(target, 1);
 			break;
@@ -45,9 +45,9 @@ public class Spell extends Card {
 		}
 	}
 
-	public void activate(int id, Player p) {
+	public void activate(Player p) {
 		Effects ee = new Effects();
-		switch (id) {
+		switch (this.getMyID()) {
 		case 4:
 			ee.heal(p, 2);
 			break;
