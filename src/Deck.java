@@ -20,10 +20,6 @@ public class Deck {
 				new Minion("Absolute Beefcake", 4, 9, 2, 7)));
 	}
 
-	public Deck(Card[] cList) {
-		// myDeck.addAll(Arrays.asList(cList));
-	}
-
 	public void shuffle() {
 		Collections.shuffle(myDeck);
 	}
