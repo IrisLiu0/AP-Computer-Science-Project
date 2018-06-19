@@ -58,7 +58,7 @@ public class Minion extends Card {
 		switch (id) {
 		case 2:
 			for (int i = 0; i < Player.getField().size(); i++) {
-				Player.getField().get(i).setDefense(Player.getField().get(i).getDefense() + 1);
+				Player.getField().get(i).setAttack(Player.getField().get(i).getAttack() + 1);
 			}
 			break;
 		case 3:
