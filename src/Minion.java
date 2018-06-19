@@ -73,7 +73,7 @@ public class Minion extends Card {
 
 	public void fight(Minion target) {
 		this.setDefense(this.getDefense() - target.getAttack());
-		target.setDefense(target.getAttack() - this.getDefense());
+		target.setDefense(target.getDefense() - this.getAttack());
 		// must implement death in player and enemy classes, activated by a
 		// check after fight is executed
 	}
