@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class Player {
 	private Deck d;
 	private ArrayList<Card> hand;
-	private static ArrayList<Minion> field;
+	private ArrayList<Minion> field;
 	private int currentMana, maxMana;
 	private int life;
 	private int hover = -1, selected = -1;
@@ -19,12 +19,10 @@ public class Player {
 		d.shuffle();
 		hand = new ArrayList<Card>();
 		life = 15;
-		currentMana = 5;
-		maxMana = 5;
 		draw(5);
 	}
 
-	public static ArrayList<Minion> getField() {
+	public ArrayList<Minion> getField() {
 		return field;
 	}
 
@@ -138,7 +136,8 @@ public class Player {
 						break;
 					field.add((Minion) c);
 					hand.remove(selected);
-					c.activate();
+					c.activate((Minion) c, this);
+					c.activate(field);
 					currentMana -= c.getMyCost();
 					break;
 				case 0:

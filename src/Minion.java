@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Minion extends Card {
 	private int atk, def;
@@ -65,24 +66,25 @@ public class Minion extends Card {
 		System.out.println(id);
 	}
 
-	public void activate(int id, Minion target) {
+	public void activate(ArrayList<Minion> field) {
 		Effects e = new Effects();
-		switch (id) {
+		switch (this.getMyID()) {
 		case 2:
-			for (int i = 0; i < Player.getField().size(); i++) {
-				Player.getField().get(i).setAttack(Player.getField().get(i).getAttack() + 1);
+			for (int i = 0; i < field.size(); i++) {
+				field.get(i).setAttack(field.get(i).getAttack() + 1);
 			}
 			break;
 		case 3:
-			e.dmg(target, 1);
-			e.atkUp(target, 2);
+			Minion m = field.get((int) (Math.random()*field.size()));
+			e.dmg(m, 1);
+			e.atkUp(m, 2);
 			break;
 		}
 	}
 
-	public void activate(int id, Player p) {
+	public void activate(Minion m, Player p) {
 		Effects e = new Effects();
-		if (id == 6)
+		if (this.getMyID() == 6)
 			e.heal(p, 3);
 
 	}

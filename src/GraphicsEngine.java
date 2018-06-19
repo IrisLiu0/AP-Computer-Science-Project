@@ -78,6 +78,14 @@ public class GraphicsEngine extends Component
 			g.setFont(new Font("ARIAL", 100, 100));
 			g.drawString("YOU WIN!", getWidth() / 2 - 200, getHeight() / 2 - 50);
 		}
+		if (p.getLife() <=0)
+		{
+			g.setColor(new Color(100, 100, 100, 150));
+			g.fillRect(0, 0, getWidth(), getHeight());
+			g.setColor(Color.BLACK);
+			g.setFont(new Font("ARIAL", 100, 100));
+			g.drawString("YOU LOSE!", getWidth() / 2 - 200, getHeight() / 2 - 50);
+		}
 	}
 
 	public void actionPerformed(ActionEvent e) {
