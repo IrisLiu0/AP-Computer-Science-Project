@@ -129,9 +129,11 @@ public class Player {
 	}
 
 	public void drawField(Graphics g, int width) {
+		g.setFont(new Font("ARIAL", 50,50));
 		for (int i = 0; i < field.size(); i++) {
 			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 500, width / 10,
 					(int) (width / 10 / Card.aspectRatio));
+			g.drawString(field.get(i).getAttack() + "/" + field.get(i).getDefense(), width / 2 - (width / 20) * (field.size()) + width / 10 * i+60, 720);
 		}
 		if (selected < -1)
 		{
@@ -220,7 +222,12 @@ public class Player {
 		{
 			for (int i = 0; i < eField.size(); i++)
 			{
-				
+				if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
+				{
+					field.get(-2-selected).fight(eField.get(i));
+					if (field.get(-2-selected).getDefense() <= 0) destroyCard(selected);
+					if (eField.get(i).getDefense() <= 0) eField.remove(i);
+				}
 			}
 		}
 	}
@@ -234,8 +241,10 @@ public class Player {
 		life -= c;
 	}
 
-	public void destroyCard(Card c) {
+	public void destroyCard(int i) {
 		// Code should remove c from the field and move it to the graveyard
+		field.remove(-2-selected);
+		selected = -1;
 	}
 
 }
