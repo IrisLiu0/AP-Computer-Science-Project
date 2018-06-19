@@ -31,7 +31,6 @@ public class Player {
 	}
 
 	public void startGame() {
-		// currentMana = 0;
 		d.shuffle();
 		startTurn();
 	}
@@ -144,7 +143,7 @@ public class Player {
 					c.activate(eField);
 					currentMana -= c.getMyCost();
 					hand.remove(selected);
-					
+
 					break;
 				default:
 					for (int i = 0; i < eField.size(); i++) {
@@ -170,9 +169,6 @@ public class Player {
 		} else if (y < 800 && y > 500) {
 
 			for (int i = 0; i < field.size(); i++) {
-				// field.get(i).paint(g, width / 2 - (width / 20) *
-				// (field.size()) + width / 10 * i, 500, width / 10,
-				// (int) (width / 10 / Card.aspectRatio));
 				if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 500
 						&& x < width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width / 10
 						&& y < 500 + (int) (width / 10 / Card.aspectRatio)) {
@@ -194,7 +190,6 @@ public class Player {
 			}
 		}
 	}
-	// Modify to return selected card
 
 	public int getLife() {
 		return life;
@@ -205,7 +200,6 @@ public class Player {
 	}
 
 	public void destroyCard(int i) {
-		// Code should remove c from the field and move it to the graveyard
 		field.remove(-2 - selected);
 		selected = -1;
 	}

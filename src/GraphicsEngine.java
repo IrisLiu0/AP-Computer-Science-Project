@@ -35,7 +35,6 @@ public class GraphicsEngine extends Component
 	}
 
 	private void update() {
-		// loop.gameLoop();
 		repaint();
 	}
 
@@ -45,13 +44,6 @@ public class GraphicsEngine extends Component
 	}
 
 	public void paint(Graphics g) {
-		// g.fillRect(0, 0, this.getWidth(), this.getHeight());
-		/*
-		 * switch (loop.checkWin()) {
-		 * 
-		 * }
-		 */
-
 		g.drawImage(back, 0, 0, this.getWidth(), this.getHeight(), null);
 		e.paint(g, getWidth());
 		p.drawHand(g, this.getWidth());
@@ -122,9 +114,6 @@ public class GraphicsEngine extends Component
 
 	public void mouseReleased(MouseEvent e) {
 		if (!pause) {
-			// if (g.fillRect(this.getWidth()/12*9,
-			// this.getHeight()/2-this.getHeight()/12, this.getWidth()/10,
-			// this.getHeight()/10);)
 			if (e.getX() > this.getWidth() / 12 * 9 && e.getY() > this.getHeight() / 2 - this.getHeight() / 12
 					&& e.getX() < this.getWidth() / 12 * 9 + this.getWidth() / 10
 					&& e.getY() < this.getHeight() / 2 - this.getHeight() / 12 + this.getHeight() / 10) {
@@ -143,13 +132,11 @@ public class GraphicsEngine extends Component
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
 		System.out.println("hello");
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
 
 	}
 }

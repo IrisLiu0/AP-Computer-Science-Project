@@ -39,16 +39,14 @@ public class Spell extends Card {
 			break;
 		}
 	}
-	
-	public void activate(ArrayList<Minion> field)
-	{
-		switch (this.getMyID())
-		{
+
+	public void activate(ArrayList<Minion> field) {
+		switch (this.getMyID()) {
 		case 5:
-			field.remove((int)( Math.random() * field.size()));
+			field.remove((int) (Math.random() * field.size()));
 			break;
 		case 8:
-			field.size(); // idk what this is for
+			field.size();
 			break;
 		}
 	}
@@ -62,13 +60,4 @@ public class Spell extends Card {
 			break;
 		}
 	}
-
-	public void summon() {
-
-	}
-
-	public void destroy() {
-
-	}
-
 }

@@ -11,14 +11,11 @@ public class Minion extends Card {
 		init(id);
 	}
 
-	
-	
 	public void setStun(boolean stun) {
 		this.stun = stun;
 	}
-	
-	public boolean getStun()
-	{
+
+	public boolean getStun() {
 		return stun;
 	}
 
@@ -75,7 +72,7 @@ public class Minion extends Card {
 			}
 			break;
 		case 3:
-			Minion m = field.get((int) (Math.random()*field.size()));
+			Minion m = field.get((int) (Math.random() * field.size()));
 			e.dmg(m, 1);
 			e.atkUp(m, 2);
 			break;
@@ -86,14 +83,11 @@ public class Minion extends Card {
 		Effects e = new Effects();
 		if (this.getMyID() == 6)
 			e.heal(p, 3);
-
 	}
 
 	public void fight(Minion target) {
 		this.setDefense(this.getDefense() - target.getAttack());
 		target.setDefense(target.getDefense() - this.getAttack());
-		// must implement death in player and enemy classes, activated by a
-		// check after fight is executed
 	}
 
 }
