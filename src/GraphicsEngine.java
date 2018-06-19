@@ -51,14 +51,7 @@ public class GraphicsEngine extends Component
 		 * 
 		 * }
 		 */
-		if(e.getField().size()==0)
-		{
-			g.setColor(new Color(50, 50, 50, 150));
-			g.fillRect(0, 0, getWidth(), getHeight());
-			g.setColor(Color.BLACK);
-			g.setFont(new Font("ARIAL", 100, 100));
-			g.drawString("YOU WIN!", getWidth() / 2 - 200, getHeight() / 2 - 50);
-		}
+
 		g.drawImage(back, 0, 0, this.getWidth(), this.getHeight(), null);
 		e.paint(g, getWidth());
 		p.drawHand(g, this.getWidth());
@@ -77,7 +70,15 @@ public class GraphicsEngine extends Component
 				this.getHeight() / 10);
 		g.setFont(new Font("ARIAL", 30, 30));
 		g.drawString("END TURN", this.getWidth() / 16 * 12 + 20, this.getHeight() / 2 - this.getHeight() / 40);
-
+		if(e.getField().size()<1)
+		{
+			System.out.println("ENEMY FIELD:" + e.getField().size());
+			g.setColor(new Color(100, 100, 100, 150));
+			g.fillRect(0, 0, getWidth(), getHeight());
+			g.setColor(Color.BLACK);
+			g.setFont(new Font("ARIAL", 100, 100));
+			g.drawString("YOU WIN!", getWidth() / 2 - 200, getHeight() / 2 - 50);
+		}
 	}
 
 	public void actionPerformed(ActionEvent e) {
