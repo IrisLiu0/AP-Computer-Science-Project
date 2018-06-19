@@ -20,7 +20,7 @@ public class Player {
 		d.shuffle();
 		hand = new ArrayList<Card>();
 		life = 15;
-		currentMana = 1;
+		currentMana = 5;
 		maxMana = 5;
 		draw(5);
 	}
@@ -152,7 +152,6 @@ public class Player {
 					selected = -2 - i;
 				}
 			}
-<<<<<<< HEAD
 		}
 		else if (y<500)
 		{
@@ -161,14 +160,9 @@ public class Player {
 				if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
 				{
 					field.get(-2-selected).fight(eField.get(i));
-					if (field.get(-2-selected).getDefense() <= 0) destroyCard(selected);
-					if (eField.get(i).getDefense() <= 0) eField.remove(i);
+					if (eField.get(i).getDefense() < 1) eField.remove(i);
+					if (field.get(-2-selected).getDefense() <= 0) destroyCard(selected);			
 				}
-=======
-		} else if (y < 500) {
-			for (int i = 0; i < eField.size(); i++) {
-
->>>>>>> e6c67313e6a1a27863e43590bd6d59cd11ef9b80
 			}
 		}
 	}
