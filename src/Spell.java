@@ -50,6 +50,7 @@ public class Spell extends Card {
 		switch (this.getMyID()) {
 		case 4:
 			ee.heal(p, 2);
+			ee.dmg(m, 2);
 			break;
 		}
 	}

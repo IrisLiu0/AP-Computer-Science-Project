@@ -135,14 +135,16 @@ public class Player {
 				default:
 					for (int i = 0; i < eField.size(); i++) {
 						System.out.println(x);
-						if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
+						if (x > width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
 						{
 							if (c.getType()==2) c.activate(eField.get(i), this);
 							else
 							c.activate(eField.get(i));
+							if (eField.get(i).getDefense()<=0) eField.remove(i);
 							currentMana -= c.getMyCost();
 						}
 					}
+					hand.remove(selected);
 					break;
 				}
 				
@@ -165,7 +167,7 @@ public class Player {
 		{
 			for (int i = 0; i < eField.size(); i++)
 			{
-				if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
+				if (x > width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
 				{
 					field.get(-2-selected).fight(eField.get(i));
 					if (eField.get(i).getDefense() < 1) eField.remove(i);
