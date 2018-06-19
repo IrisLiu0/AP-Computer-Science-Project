@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Spell extends Card {
 
@@ -36,11 +37,18 @@ public class Spell extends Card {
 		case 4:
 			ee.dmg(target, 2);
 			break;
+		}
+	}
+	
+	public void activate(ArrayList<Minion> field)
+	{
+		switch (this.getMyID())
+		{
 		case 5:
-			int rand = (int) Math.random() * Enemy.getField().size();
+			int rand = (int) Math.random() * field.size();
 			break;
 		case 8:
-			Enemy.getField().size(); // idk what this is for
+			field.size(); // idk what this is for
 			break;
 		}
 	}

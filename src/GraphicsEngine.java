@@ -29,6 +29,7 @@ public class GraphicsEngine extends Component
 		exit = new ImageIcon("src//Pictures//images.png").getImage();
 		p = new Player();
 		e = new Enemy();
+		p.startGame();
 		t = new Timer(10, this);
 		t.start();
 	}
@@ -39,7 +40,8 @@ public class GraphicsEngine extends Component
 	}
 
 	private void endTurn() {
-		
+		e.attack(p);
+		p.startTurn();
 	}
 
 	public void paint(Graphics g) {
@@ -49,6 +51,14 @@ public class GraphicsEngine extends Component
 		 * 
 		 * }
 		 */
+		if(e.getField().size()==0)
+		{
+			g.setColor(new Color(50, 50, 50, 150));
+			g.fillRect(0, 0, getWidth(), getHeight());
+			g.setColor(Color.BLACK);
+			g.setFont(new Font("ARIAL", 100, 100));
+			g.drawString("YOU WIN!", getWidth() / 2 - 200, getHeight() / 2 - 50);
+		}
 		g.drawImage(back, 0, 0, this.getWidth(), this.getHeight(), null);
 		e.paint(g, getWidth());
 		p.drawHand(g, this.getWidth());

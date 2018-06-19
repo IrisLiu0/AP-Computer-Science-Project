@@ -1,12 +1,24 @@
 
 public class Minion extends Card {
 	private int atk, def;
+	private boolean stun = true;
 
 	public Minion(String name, int cost, int id, int atk, int def) {
 		super(name, cost, id);
 		this.atk = atk;
 		this.def = def;
 		init(id);
+	}
+
+	
+	
+	public void setStun(boolean stun) {
+		this.stun = stun;
+	}
+	
+	public boolean getStun()
+	{
+		return stun;
 	}
 
 	public int getAttack() {

@@ -1,5 +1,6 @@
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
@@ -60,6 +61,10 @@ public class Card {
 
 	public void activate(Minion minion, Player player) 
 	{
+
+	}
+
+	public void activate(ArrayList<Minion> eField) {
 
 	}
 

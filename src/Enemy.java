@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Enemy {
 
-	private static ArrayList<Minion> field;
+	private ArrayList<Minion> field;
 
 	public Enemy() {
 		field = new ArrayList<Minion>();
@@ -35,7 +35,7 @@ public class Enemy {
 		return false;
 	}
 
-	public static ArrayList<Minion> getField() {
+	public ArrayList<Minion> getField() {
 		return field;
 	}
 }

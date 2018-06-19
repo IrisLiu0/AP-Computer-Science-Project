@@ -36,7 +36,18 @@ public class Player {
 	public void startGame() {
 		// currentMana = 0;
 		d.shuffle();
-		hand.add(d.draw());
+		startTurn();
+	}
+	
+	public void startTurn()
+	{
+		if (maxMana < 8)maxMana++;
+		currentMana=maxMana;
+		draw(1);
+		for (int i = 0; i < field.size(); i++)
+		{
+			field.get(i).setStun(true);
+		}
 	}
 
 	public void draw(int num) {
@@ -50,7 +61,7 @@ public class Player {
 					(int) (width / 8 / Card.aspectRatio));
 		}
 		g.setColor(new Color(50, 50, 50, 100));
-		if (hover != -1) {
+		if (hover != -1 && hand.size() >= hover+1) {
 			g.fillRect(width / 2 - (width / 16) * (hand.size()) + width / 8 * hover, 800, width / 8,
 					(int) (width / 8 / Card.aspectRatio));
 			hand.get(hover).paint(g, width / 20, 150, width / 5, (int) (width / 5 / Card.aspectRatio));
@@ -128,8 +139,11 @@ public class Player {
 						break;
 					field.add((Minion) c);
 					hand.remove(selected);
-				case 0:
 					c.activate();
+					currentMana -= c.getMyCost();
+					break;
+				case 0:
+					c.activate(eField);
 					currentMana -= c.getMyCost();
 					break;
 				default:
@@ -167,9 +181,10 @@ public class Player {
 		{
 			for (int i = 0; i < eField.size(); i++)
 			{
-				if (x > width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
+				if (x > width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (eField.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio) && field.get(-2-selected).getStun())
 				{
 					field.get(-2-selected).fight(eField.get(i));
+					field.get(-2-selected).setStun(false);
 					if (eField.get(i).getDefense() < 1) eField.remove(i);
 					if (field.get(-2-selected).getDefense() <= 0) destroyCard(selected);			
 				}
