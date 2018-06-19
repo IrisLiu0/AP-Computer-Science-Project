@@ -9,8 +9,7 @@ public class Enemy {
 	public Enemy() {
 		field = new ArrayList<Minion>();
 		field.addAll(Arrays.asList(new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2),
-				new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2),
-				new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2)));
+				new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2), new Minion("Pleb", 0, 10, 1, 2)));
 	}
 
 	public void startGame() {
@@ -23,9 +22,12 @@ public class Enemy {
 	}
 
 	public void paint(Graphics g, int width) {
-		if (field.size() > 0)
-			field.get(0).paint(g, width - 80, 100, 160, (int) (160 / Card.aspectRatio));
-		// for (int i = 1)
+		
+		for (int i = 0; i < field.size(); i++)
+		{
+			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 125, width / 10,
+					(int) (width / 10 / Card.aspectRatio));
+		}
 	}
 
 	public boolean isDead() {

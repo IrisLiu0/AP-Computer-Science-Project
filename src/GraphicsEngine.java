@@ -52,10 +52,10 @@ public class GraphicsEngine extends Component
 		 * }
 		 */
 		g.drawImage(back, 0, 0, this.getWidth(), this.getHeight(), null);
+		e.paint(g, getWidth());
 		p.drawHand(g, this.getWidth());
 		p.drawField(g, this.getWidth());
 		p.displayMana(g, this.getWidth());
-		e.paint(g, getWidth());
 		if (pause) {
 			g.setColor(new Color(50, 50, 50, 150));
 			g.fillRect(0, 0, getWidth(), getHeight());
