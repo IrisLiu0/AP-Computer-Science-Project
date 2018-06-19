@@ -62,13 +62,17 @@ public class Minion extends Card {
 			}
 			break;
 		case 3:
-			e.atkUp(target, 2);
 			e.dmg(target, 1);
-			break;
-		case 6:
-			e.hpUp(target, 3);
+			e.atkUp(target, 2);
 			break;
 		}
+	}
+
+	public void activate(int id, Player p) {
+		Effects e = new Effects();
+		if (id == 6)
+			e.heal(p, 3);
+
 	}
 
 	public void fight(Minion target) {

@@ -34,7 +34,7 @@ public class Spell extends Card {
 			ee.defDown(target, 1);
 			break;
 		case 4:
-			ee.defDown(target, 2);
+			ee.dmg(target, 2);
 			break;
 		case 5:
 			int rand = (int) Math.random() * Enemy.getField().size();
