@@ -57,7 +57,7 @@ public class Spell extends Card {
 		Effects ee = new Effects();
 		switch (this.getMyID()) {
 		case 4:
-			ee.heal(p, 2);
+			ee.heal(p, 1);
 			ee.dmg(m, 2);
 			break;
 		}
