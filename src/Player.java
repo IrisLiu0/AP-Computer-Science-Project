@@ -133,7 +133,10 @@ public class Player {
 					break;
 				default:
 					for (int i = 0; i < eField.size(); i++) {
-
+						if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
+						{
+							c.activate(eField.get(i));
+						}
 					}
 					break;
 				}
