@@ -145,6 +145,7 @@ public class Player {
 					c.activate(eField);
 					currentMana -= c.getMyCost();
 					hand.remove(selected);
+					
 					break;
 				default:
 					for (int i = 0; i < eField.size(); i++) {
@@ -159,9 +160,9 @@ public class Player {
 							if (eField.get(i).getDefense() <= 0)
 								eField.remove(i);
 							currentMana -= c.getMyCost();
+							hand.remove(selected);
 						}
 					}
-					hand.remove(selected);
 					break;
 				}
 

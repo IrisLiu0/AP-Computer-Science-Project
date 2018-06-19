@@ -72,7 +72,6 @@ public class GraphicsEngine extends Component
 		g.drawString("END TURN", this.getWidth() / 16 * 12 + 20, this.getHeight() / 2 - this.getHeight() / 40);
 		if(e.getField().size()<1)
 		{
-			System.out.println("ENEMY FIELD:" + e.getField().size());
 			g.setColor(new Color(100, 100, 100, 150));
 			g.fillRect(0, 0, getWidth(), getHeight());
 			g.setColor(Color.BLACK);
