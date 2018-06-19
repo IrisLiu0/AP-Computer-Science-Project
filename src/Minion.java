@@ -45,6 +45,9 @@ public class Minion extends Card {
 		case 9:
 			super.setImg("Pictures//Absolute Beefcake.png");
 			break;
+		case 10:
+			super.setImg("Pictures//Pleb.png");
+			break;
 		}
 		super.setType(-1);
 		System.out.println(id);
