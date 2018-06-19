@@ -145,6 +145,7 @@ public class Player {
 				case 0:
 					c.activate(eField);
 					currentMana -= c.getMyCost();
+					hand.remove(selected);
 					break;
 				default:
 					for (int i = 0; i < eField.size(); i++) {

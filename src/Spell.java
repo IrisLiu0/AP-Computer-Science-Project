@@ -45,7 +45,7 @@ public class Spell extends Card {
 		switch (this.getMyID())
 		{
 		case 5:
-			int rand = (int) Math.random() * field.size();
+			field.remove((int)( Math.random() * field.size()));
 			break;
 		case 8:
 			field.size(); // idk what this is for
