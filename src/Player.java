@@ -22,7 +22,7 @@ public class Player {
 		life = 15;
 		currentMana = 1;
 		maxMana = 5;
-		draw(4);
+		draw(5);
 	}
 
 	public static ArrayList<Minion> getField() {
