@@ -72,7 +72,7 @@ public class Player {
 		for (int i = 0; i < field.size(); i++) {
 			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 500, width / 10,
 					(int) (width / 10 / Card.aspectRatio));
-			g.drawString(field.get(i).getAttack() + "/" + field.get(i).getDefense(), width / 2 - (width / 20) * (field.size()) + width / 10 * i+60, 720);
+			g.drawString(field.get(i).getAttack() + "/" + field.get(i).getDefense(), width / 2 - (width / 20) * (field.size()) + width / 10 * i+60, 740);
 		}
 		if (selected < -1) {
 			g.setColor(new Color(50, 50, 50, 150));
@@ -133,7 +133,10 @@ public class Player {
 					break;
 				default:
 					for (int i = 0; i < eField.size(); i++) {
-
+						if (x > width / 2 - (width / 20) * (field.size()) + width / 10 * (i) && y > 125 && x <  width / 2 - (width / 20) * (field.size()) + width / 10 * (i) + width/10 && y < 125 + (int) (width / 10 / Card.aspectRatio))
+						{
+							c.activate(eField.get(i));
+						}
 					}
 					break;
 				}

@@ -24,8 +24,14 @@ public class Card {
 		g.drawImage(img, x, y, width, height, null, null);
 	}
 
-	public void activate() {
+	public void activate() 
+	{
 
+	}
+	
+	public void activate(Minion m)
+	{
+		
 	}
 
 	public void setType(int type) {

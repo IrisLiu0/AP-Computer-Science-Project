@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,10 +23,11 @@ public class Enemy {
 	}
 
 	public void paint(Graphics g, int width) {
-
+		g.setFont(new Font("ARIAL", 50,50));
 		for (int i = 0; i < field.size(); i++) {
 			field.get(i).paint(g, width / 2 - (width / 20) * (field.size()) + width / 10 * i, 125, width / 10,
 					(int) (width / 10 / Card.aspectRatio));
+			g.drawString(field.get(i).getAttack() + "/" + field.get(i).getDefense(), width / 2 - (width / 20) * (field.size()) + width / 10 * i+60, 125+240);
 		}
 	}
 
